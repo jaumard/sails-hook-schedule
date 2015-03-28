@@ -8,6 +8,7 @@ Currently in development
 For now it's not working cause when I call res.forbidden() under my hook I have an error : 
 
     TypeError: Object #<ServerResponse> has no method 'view'
+See the issue https://github.com/jaumard/sails-hook-user-acl/issues/1
 
 ##Installation
     npm install sails-hook-user-acl
