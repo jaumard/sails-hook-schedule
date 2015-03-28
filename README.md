@@ -8,7 +8,7 @@ or
     sudo npm install sails-hook-user-acl  
 
 ## Configure ##
-Create or modify config.acl.js : 
+Create or modify config/acl.js : 
 
     module.exports.acl = {
         //Current user role access, default in session.role
@@ -54,13 +54,16 @@ Create a user model the way you want to, for example :
       }
     };
     
-When your user is logged put the user role in session and don't forget to set currentRole under config/acl.js : 
+When your user is logged put the user role in session (and don't forget to remove it on log out) and don't forget to set currentRole under config/acl.js : 
 
     session.role = user.role;
 
 Now all it's automatic for all routes you have configure under config/routes.
 
 But if you want to use/check ACL manually (rules under config/acl.js), just do : 
+
+    sails.hook.acl.isAllow(ROLE, RESOURCE)
+Example under a controller : 
 
     myControllerFunction : function (req, res)
     {
