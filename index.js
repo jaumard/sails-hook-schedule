@@ -52,7 +52,7 @@ module.exports = function aclHook(sails)
 		}
 
 		//No ACL define so it's the default behavior
-		if (resource == null)
+		if (resource == null || (resource != null && typeof resource.roles == "undefined"))
 		{
 			isAllowed = defaultPolicy == "allow";
 		}
