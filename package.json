@@ -1,18 +1,24 @@
 {
-  "name"       : "sails-hook-user-acl",
-  "version"    : "0.0.10",
-  "description": "Hook to manage basic user ACL for sails application",
-  "main"       : "index.js",
-  "scripts": {
-    "postinstall": "node scripts/install.js"
+  "name"           : "sails-hook-schedule",
+  "version"        : "0.0.1",
+  "description"    : "Hook to manage basic cron job for sails application",
+  "main"           : "index.js",
+  "scripts"        : {
+	"postinstall": "node scripts/install.js"
+  },
+  "author"         : "Jimmy Aumard",
+  "repository"     : {
+	"type": "git",
+	"url" : "https://github.com/jaumard/sails-hook-schedule.git"
   },
   "devDependencies": {
-    "sails": "~0.11.0"
+	"sails": "~0.11.0"
   },
-  "dependencies": {
-    "fs-extra": "0.17.0"
+  "dependencies"   : {
+	"fs-extra"     : "0.17.0",
+	"node-schedule": "^0.2.3"
   },
-  "sails"      : {
+  "sails"          : {
 	"isHook": true
   }
 }
