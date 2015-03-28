@@ -20,7 +20,7 @@ describe('Basic tests ::', function ()
 		Sails().lift({
 			hooks  : {
 				// Load the hook
-				"sails-hook-user-acl" : require('../'), // Skip grunt (unless your hook uses it)
+				"sails-hook-schedule" : require('../'), // Skip grunt (unless your hook uses it)
 				"grunt"          : false
 			}, log : {level : "error"}
 

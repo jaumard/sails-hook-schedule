@@ -14,7 +14,7 @@ if (!fs.existsSync(appDir + "/../../config/schedule.js"))
 		}
 		else
 		{
-			fs.chmodSync(appDir + "/../../config/schedule.js", 0755);
+			console.log(fs.chmodSync(appDir + "/../../config/schedule.js", 0755));
 			console.log("done write schedule.js base config");
 
 		}

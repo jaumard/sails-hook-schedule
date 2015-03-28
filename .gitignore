@@ -31,5 +31,5 @@ node_modules
 
 
 .idea
-sails-hook-user-acl.iml
+sails-hook-schedule.iml
 npm-debug.log
