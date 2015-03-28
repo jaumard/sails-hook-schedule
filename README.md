@@ -3,9 +3,7 @@ Hook to manage basic cron job for sails application
 
 ##Installation
     npm install sails-hook-schedule
-or
-
-    sudo npm install sails-hook-schedule  
+Don't use sudo or config/schedule.js will be create as root user  
 
 ##Configure
 Create or modify config/schedule.js : 
