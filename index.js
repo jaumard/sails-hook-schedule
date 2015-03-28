@@ -8,8 +8,12 @@ module.exports = function aclHook(sails)
 	var routes       = {};
 	var defaultRole;
 	var currentRole;
-	var defaultPolicy;
+	var defaultPolicy = "allow";
 	var beforeRoutes = {};
+	var onForbidden  = function (req, res, resource)
+	{
+		res.status(403).send("<h1>" + req.__("Forbidden") + "</h1>");
+	};
 
 
 	var retrieveResource = function (resource)
@@ -91,11 +95,11 @@ module.exports = function aclHook(sails)
 		{
 			if (req.wantsJSON)
 			{
-				return res.status(403).json();
+				res.status(403).json();
 			}
 			else
 			{
-				return res.forbidden();
+				onForbidden(req, res, resource);
 			}
 		}
 	};
@@ -120,16 +124,51 @@ module.exports = function aclHook(sails)
 		{
 			if (typeof sails.config.acl != "undefined")
 			{
-				roles         = sails.config.acl.roles;
-				rules         = sails.config.acl.rules;
-				defaultRole   = sails.config.acl.defaultRole;
-				currentRole   = sails.config.acl.currentRole;
-				defaultPolicy = sails.config.acl.defaultPolicy;
-				routes        = sails.config.acl.routes;
+				if (sails.config.acl.roles == undefined)
+				{
+					sails.log.error("ACL need roles attribut under config/acl.js");
+				}
+				else
+				{
+					roles = sails.config.acl.roles;
+				}
+
+				if (sails.config.acl.rules != undefined)
+				{
+					rules = sails.config.acl.rules;
+				}
+				if (sails.config.acl.defaultRole == undefined)
+				{
+					sails.log.error("ACL need defaultRole attribut under config/acl.js");
+				}
+				else
+				{
+					defaultRole = sails.config.acl.defaultRole;
+				}
+				if (sails.config.acl.currentRole == undefined)
+				{
+					sails.log.error("ACL need currentRole attribut under config/acl.js");
+				}
+				else
+				{
+					currentRole = sails.config.acl.currentRole;
+				}
+				if (sails.config.acl.defaultPolicy != undefined)
+				{
+					defaultPolicy = sails.config.acl.defaultPolicy;
+				}
+				if (sails.config.acl.routes != undefined)
+				{
+					routes = sails.config.acl.routes;
+				}
+				if (sails.config.acl.onForbidden != undefined)
+				{
+					onForbidden = sails.config.acl.onForbidden;
+				}
 			}
 			else
 			{
-				console.error("No config found ! Check you have config/acl.js file with default config");
+				sails.log.error("No config found ! Check you have config/acl.js file with default config");
 			}
 			return next();
 		},

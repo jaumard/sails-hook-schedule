@@ -1,6 +1,6 @@
 {
   "name"       : "sails-hook-user-acl",
-  "version"    : "0.0.6",
+  "version"    : "0.0.10",
   "description": "Hook to manage basic user ACL for sails application",
   "main"       : "index.js",
   "scripts": {

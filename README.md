@@ -32,6 +32,11 @@ Create or modify config/acl.js :
                 "roles" : ["admin"]
             }
         },
+        "onForbidden" : function (req, res, resource)//callback when user doesn't have access to a resource
+        {
+            //res.redirect("/office");
+            res.status(403).send("<h1>"+req.__("Forbidden")+"</h1>");
+        },
         "routes" : //Additional route that are not under config/routes, can be used to protect assets files, but also rest url
         {
             "/js/admin.js" : {//For example you can call sails.config.acl.isAllow("admin", "saveFile")
