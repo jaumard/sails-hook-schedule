@@ -1,21 +1,21 @@
 # sails-hook-user-acl
 Hook to manage basic user ACL
 
-#WARNING#
+#WARNING
 Currently in development
  
-#NEED TO BE FIXED#
+#NEED TO BE FIXED
 For now it's not working cause when I call res.forbidden() under my hook I have an error : 
 
     TypeError: Object #<ServerResponse> has no method 'view'
 
-##Installation##
+##Installation
     npm install sails-hook-user-acl
 or
 
     sudo npm install sails-hook-user-acl  
 
-##Configure##
+##Configure
 Create or modify config/acl.js : 
 
     module.exports.acl = {
@@ -48,7 +48,7 @@ You can also configure ACL for basic routes under config/routes.js :
        roles      : ["admin"]//Accessible only for admin
     }
     
-##Usage## 
+##Usage
 Create a user model the way you want to, for example : 
     
     module.exports = {
