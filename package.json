@@ -1,0 +1,18 @@
+{
+  "name"       : "sails-hook-user-acl",
+  "version"    : "0.0.6",
+  "description": "Hook to manage basic user ACL for sails application",
+  "main"       : "index.js",
+  "scripts": {
+    "postinstall": "node scripts/install.js"
+  },
+  "devDependencies": {
+    "sails": "~0.11.0"
+  },
+  "dependencies": {
+    "fs-extra": "0.17.0"
+  },
+  "sails"      : {
+	"isHook": true
+  }
+}
