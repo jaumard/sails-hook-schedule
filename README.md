@@ -1,5 +1,6 @@
 # sails-hook-schedule
 Hook to manage basic cron job for sails application
+Base on node-schedule module https://github.com/node-schedule/node-schedule
 
 ##Installation
     npm install sails-hook-schedule
