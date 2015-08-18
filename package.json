@@ -1,15 +1,26 @@
 {
   "name"           : "sails-hook-schedule",
-  "version"        : "0.1.0",
+  "version"        : "0.2.0",
   "description"    : "Hook to manage basic cron job for sails application",
   "main"           : "index.js",
   "scripts"        : {
 	"postinstall": "node scripts/install.js"
   },
   "author"         : "Jimmy Aumard",
+  "keywords"       : [
+    "sails",
+    "sails.js",
+    "sails-hook",
+    "schedule",
+    "job",
+    "cron",
+    "hook",
+    "crontab",
+    "enterprise"
+  ],
   "repository"     : {
 	"type": "git",
-	"url" : "https://github.com/jaumard/sails-hook-schedule.git"
+    "url": "https://github.com/jaumard/sails-hook-schedule"
   },
   "devDependencies": {
 	"sails": "~0.11.0"
