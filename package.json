@@ -1,10 +1,10 @@
 {
   "name"           : "sails-hook-schedule",
-  "version"        : "0.2.0",
+  "version"        : "0.2.1",
   "description"    : "Hook to manage basic cron job for sails application",
   "main"           : "index.js",
   "scripts"        : {
-	"postinstall": "node scripts/install.js"
+    "postinstall": "node scripts/install.js"
   },
   "author"         : "Jimmy Aumard",
   "keywords"       : [
@@ -19,17 +19,18 @@
     "enterprise"
   ],
   "repository"     : {
-	"type": "git",
+    "type": "git",
     "url": "https://github.com/jaumard/sails-hook-schedule"
   },
   "devDependencies": {
-	"sails": "~0.11.0"
+    "sails": "~0.11.0"
   },
   "dependencies"   : {
-	"fs-extra"     : "0.17.0",
-	"node-schedule": "^0.2.3"
+    "fs-extra"             : "0.17.0",
+    "node-schedule"        : "^0.2.3",
+    "sails-util-mvcsloader": "^0.3.0"
   },
   "sails"          : {
-	"isHook": true
+    "isHook": true
   }
 }
