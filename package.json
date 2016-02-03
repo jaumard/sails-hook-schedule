@@ -1,6 +1,6 @@
 {
   "name"           : "sails-hook-schedule",
-  "version"        : "0.2.1",
+  "version": "0.2.2",
   "description"    : "Hook to manage basic cron job for sails application",
   "main"           : "index.js",
   "scripts"        : {
