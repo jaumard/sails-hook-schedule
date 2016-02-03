@@ -26,9 +26,9 @@
     "sails": "~0.11.0"
   },
   "dependencies"   : {
-    "fs-extra"             : "0.17.0",
-    "node-schedule"        : "^0.2.3",
-    "sails-util-mvcsloader": "^0.3.0"
+    "fs-extra"             : "0.26.5",
+    "node-schedule"        : "^1.0.0",
+    "sails-util-mvcsloader": "^0.3.2"
   },
   "sails"          : {
     "isHook": true
