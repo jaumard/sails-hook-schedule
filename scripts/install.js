@@ -18,3 +18,20 @@ if (!fs.existsSync(appDir + "/../../config/schedule.js"))
 		}
 	});
 }
+
+//Model already exist so we don't override
+if (!fs.existsSync(appDir + "/../../api/models/CronTask.js"))
+{
+	//Copy base acl config
+	fs.copy(appDir + "/api/models/CronTask.js", appDir + "/../../api/models/CronTask.js", function (err)
+	{
+		if (err)
+		{
+			console.log(err);
+		}
+		else
+		{
+			console.log("done write CronTask.js model");
+		}
+	});
+}

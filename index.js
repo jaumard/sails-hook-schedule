@@ -83,7 +83,7 @@ module.exports = function (sails)
 
 			});
 
-			sails.models.crontask.find().then(function (dbTasks)
+			CronTask.find().then(function (dbTasks)
 			{
 				dbTasks.forEach(function (dbTask)
 				{
